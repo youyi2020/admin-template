@@ -23,7 +23,7 @@ const config = merge(base, {
             inject: true,
             hash: false
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin() 
     ],
     devServer: {
         port: '8080',
@@ -45,4 +45,3 @@ const config = merge(base, {
 });
 
 module.exports = config;
-

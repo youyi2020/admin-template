@@ -1,0 +1,52 @@
+.auth-login {
+  width: 100%;
+  height: 100%;
+  background: white url('../../assets/images/bg.png') center center repeat-x;
+  background-size: cover;
+  overflow: hidden;
+}
+.auth-login .login {
+  margin: 150px auto 0;
+  width: 420px;
+  padding: 40px 50px 10px 50px;
+  text-align: center;
+  border: 1px solid #EFF7FF;
+  background: white;
+}
+.auth-login .login .login-title {
+  font-size: 20px;
+  font-weight: 400;
+  color: #34404D;
+  margin-bottom: 35px;
+}
+.auth-login .login .login-form {
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+}
+.auth-login .login .login-form .ant-form-item .ant-input-affix-wrapper {
+  height: 40px;
+}
+.auth-login .login .login-form .ant-form-item .login-form-button {
+  height: 40px;
+}
+.auth-login .login .login-form .ant-form-item .login-form-forgot {
+  float: right;
+}
+.auth-login .login .login-form .ant-form-item .login-form-button {
+  margin-top: 4px;
+  width: 100%;
+}
+.auth-login .login .login-form .ant-form-item .ant-form-explain {
+  margin-top: 4px;
+  font-size: 12px;
+}
+.auth-login .login .login-form .ant-form-item .ant-input-clear-icon {
+  color: #C3C7CB;
+}
+.auth-login .login .login-registe {
+  margin-top: 8px;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}

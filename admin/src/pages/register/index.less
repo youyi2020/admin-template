@@ -1,0 +1,56 @@
+@import '../../assets/globalStyle/default.less';
+.auth-register{
+    width: 100%;
+    height: 100%;
+    background: white url('./../../assets/images/bg.png') center center repeat-x;
+    background-size: cover;
+    overflow: hidden;
+    .register{
+        width: 420px;
+        padding: 40px 50px 10px 50px;
+        text-align: center;
+        margin: 150px auto 0;
+        border: 1px solid @color-box-border;
+        background:white;
+        .register-title{
+            font-size: 20px;
+            font-weight: 400;
+            color: @color-text-title;
+            margin-bottom: 35px;
+        }
+        .register-form {
+            display: inline-block;
+            width: 100%;
+            text-align: left;
+            .ant-form-item{
+                .ant-input-affix-wrapper{
+                    height: 40px;
+                }
+                .register-form-button{
+                    height: 40px;
+                }
+                .register-form-forgot {
+                    float: right;
+                }
+                .register-form-button {
+                    margin-top: 4px;
+                    width: 100%;
+                }
+                .ant-form-explain{
+                    margin-top: 4px;
+                    font-size: 12px;
+                }
+                .ant-input-clear-icon{
+                    color: @color-text-disabled
+                }
+            }
+        }
+        .register-registe{
+            margin-top: 8px;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+        }
+    }
+}
+

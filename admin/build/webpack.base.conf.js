@@ -1,4 +1,3 @@
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const path = require('path');
 const devMode = process.env.NODE_ENV !=='production';
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -13,13 +12,12 @@ module.exports = {
         app : './src/main.js'
     },
     output: {
-        path: path.resolve(__dirname, '../dist'),
+        path: path.resolve(__dirname, '../../server/src/public'), 
         filename: 'js/[name].[hash:8].js'
     },
-    resolve: {
-        extensions: ['.vue', '.js', '.json'],
+    resolve: { 
+        extensions: ['.js', '.less', '.json'],
         alias:{
-            'vue$': 'vue/dist/vue.esm.js',
             '@': path.resolve(__dirname,'../src'),
         }
     },
@@ -31,19 +29,16 @@ module.exports = {
         tls: 'empty',
         child_process: 'empty'
     },
+    
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/,
                 include: [
                     path.resolve(__dirname, '../src'),
                 ]
-            },
-            {
-                test: /\.vue$/,
-                loader: 'vue-loader',
             },
             {
                 test: /\.(png|jpe?g|gif|svg|mp4|webm|ogg|mp3|wav|flac|aac|woff2?|eot|ttf|otf)$/,
@@ -63,8 +58,24 @@ module.exports = {
                     devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
                     'css-loader',
                     'postcss-loader',
-                    'less-loader',
-
+                    {
+                        loader: 'less-loader', 
+                        options: {
+                         modifyVars: {
+                           'primary-color': '#4E82FF',
+                           'link-color': '#4E82FF',
+                           'warning-color': '#FAAD13',
+                           'error-color': '#DF4848',
+                           'heading-color': '#111E2E',
+                           'text-color': '#34404D',
+                           'text-color-secondary': '#646D77',
+                           'disabled-color': '#C3C7CB',
+                           'border-color-base': '#DCDEE0',
+                           'box-shadow-base': '#4E82FF',
+                         },
+                         javascriptEnabled: true,
+                       }
+                    }
                 ]
             },
         ]
@@ -77,24 +88,23 @@ module.exports = {
             minSize:30000,
             cacheGroups:{
                 vendors:{
-                    test: /node_modules/,
+                    test: /node_modules/, 
                     chunks: 'initial',
                     name: 'vendor',
                     priority: 10
                 },
                 commons:{
-                    test: /src/,
+                    test: /src/,  
                     chunks: "initial",
-                    name: "common",
+                    name: "common", 
                     minChunks: 2,
-                    minSize: 0
+                    minSize: 0 
                 }
 
             }
         }
     },
     plugins: [
-        new VueLoaderPlugin(),
         new CopyWebpackPlugin([{
             from: path.resolve(__dirname, '../static'),
             to: path.resolve(__dirname, '../dist/static'),

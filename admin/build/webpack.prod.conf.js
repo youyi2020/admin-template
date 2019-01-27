@@ -19,22 +19,23 @@ const config = merge(base, {
                 parallel: true,
                 sourceMap: true 
             }),
-            new OptimizeCssAssetsPlugin({
-                cssProcessor: require('cssnano'),
+            new OptimizeCssAssetsPlugin({  
+                cssProcessor: require('cssnano'), 
                 cssProcessorPluginOptions: {
                   preset: ['default', { discardComments: { removeAll: true } }],
                 },
-                canPrint: false,
+                canPrint: false, 
                 cssProcessorOptions: {safe: false}
             }),
         ],
+        
     },
     output: {
         publicPath: './',
     },
     plugins: [
-        new CleanWebpackPlugin(['dist'],{
-            root: path.resolve(__dirname, '../'),
+        new CleanWebpackPlugin(['public'],{
+            root: path.resolve(__dirname, '../../server/src/'),
         }),
         new HtmlWebpackPlugin({
             template : './public/index.html',
