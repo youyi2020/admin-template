@@ -37,7 +37,7 @@ npm run build                                                 // 注意webpack�
 #### 3.技术栈说明
 ```
 前端：react + antdesighn + axios + redux + less
-后端: koa2 + koa-cors + jwt + koa-router + sequelize + koa-static + cross-env + nodemon
+后端: nodeJs + koa2  + mysql + jwt + koa-router + sequelize + koa-static + cross-env + nodemon + koa-cors
 打包：webapck4
 ```
 
