@@ -1,5 +1,5 @@
 ## admin-template
-nodejs + React + Redux + koa2 + webpack4+ mysql  + sequelize + jwt  + 前端全栈通用模板
+nodejs + React + Redux + koa2 + webpack4+ mysql  + sequelize + jwt  + 前端全栈通用模板（带登录注册功能）
 ### 使用步骤
 
 #### 1.安装msyql
